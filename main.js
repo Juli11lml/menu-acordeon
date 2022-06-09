@@ -12,4 +12,20 @@ $(document).ready(function(){
             $(this).children('ul').slideDown();
         }
     });
+
+    $('.btn-menu').click(function(){
+        $('.container-menu .menu').slideToggle();
+    });
+
+    $(window).resize(function(){
+        if ($(document).width() > 450){
+            $('.container-menu .menu').css({'display' : 'block'});
+        }
+
+        if ($(document).width() < 450){
+            $('.container-menu .menu').css({'display' : 'none'});
+            $('.menu li ul').slideUp();
+            $('.menu li').removeClass('active');
+        }
+    });
 });
